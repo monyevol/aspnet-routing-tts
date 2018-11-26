@@ -1,0 +1,64 @@
+﻿@model TrafficTicketsSystem2.Models.Camera
+
+@{
+    ViewBag.Title = "Edit/Update Camera Details";
+}
+
+<h2 class="maroon common-font text-center bold">Edit/Change Camera Setup</h2>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="containment">
+        <div class="form-horizontal common-font">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.CameraId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CameraNumber, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.CameraNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CameraNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Make, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.Make, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Make, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Model, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-6 control-label">
+                    @Html.ActionLink("Traffic Cameras", "Index", null, htmlAttributes: new { @class = "btn btn-warning" })
+                </label>
+                <div class="col-md-6">
+                    <input type="submit" value="Update Camera Setup" class="btn btn-warning" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<hr />

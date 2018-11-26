@@ -1,0 +1,28 @@
+﻿@model TrafficTicketsSystem2.Models.ViolationType
+
+@{
+    ViewBag.Title = "Violation Type Details";
+}
+
+<h2 class="common-font bold maroon text-center">Details on Violation Type</h2>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.ViolationTypeId)</dt>
+        <dd>@Html.DisplayFor(model => model.ViolationTypeId)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ViolationName)</dt>
+        <dd>@Html.DisplayFor(model => model.ViolationName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Description)</dt>
+        <dd>@Html.DisplayFor(model => model.Description)</dd>
+    </dl>
+</div>
+
+<p class="text-center">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ViolationTypeId }) |
+    @Html.ActionLink("Violations Types", "Index")</p>
+
+<hr />

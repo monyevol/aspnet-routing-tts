@@ -1,0 +1,128 @@
+﻿@model TrafficTicketsSystem2.Models.TrafficViolation
+
+@{
+    ViewBag.Title = "Edit/Update TrafficViolation";
+}
+
+<h2 class="common-font text-center bold maroon">Edit/Update Traffic Violation</h2>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="containment">
+        <div class="form-horizontal common-font">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.TrafficViolationId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TrafficViolationNumber, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.TrafficViolationNumber, null, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TrafficViolationNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CameraId, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.DropDownList("CameraNumber", ViewBag.CamerasNumbers as SelectList, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CameraId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="drvLicNbr" class="control-label col-md-5 maroon">Vehicle's Tag #</label>
+                <div class="col-md-7">
+                    @Html.TextBox("TagNumber", null, htmlAttributes: new { @class = "form-control", id = "drvLicNbr" })
+                    @Html.ValidationMessageFor(model => model.VehicleId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="violName" class="control-label col-md-5 maroon">Violation Name</label>
+                <div class="col-md-7">
+                    @Html.DropDownList("ViolationName", ViewBag.ViolationName as SelectList, htmlAttributes: new { @class = "form-control", id = "violName" })
+                    @Html.ValidationMessageFor(model => model.VehicleId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ViolationDate, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.ViolationDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ViolationDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ViolationTime, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.ViolationTime, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ViolationTime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhotoAvailable, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.DropDownList("PhotoAvailable", ViewBag.PhotoAvailable as SelectList, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PhotoAvailable, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.VideoAvailable, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.DropDownList("VideoAvailable", ViewBag.PhotoAvailable as SelectList, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.VideoAvailable, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PaymentDueDate, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.TextBox("PaymentDueDate", null, htmlAttributes: new { @class = "form-control", type = "Date" })
+                    @Html.ValidationMessageFor(model => model.PaymentDueDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PaymentDate, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.PaymentDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PaymentDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PaymentAmount, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.PaymentAmount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PaymentAmount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PaymentStatus, htmlAttributes: new { @class = "control-label col-md-5 maroon" })
+                <div class="col-md-7">
+                    @Html.DropDownList("PaymentStatus", ViewBag.PaymentStatus as SelectList, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PaymentStatus, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-6">
+                    @Html.ActionLink("Traffic Violations", "Index")
+                </label>
+                <div class="col-md-6">
+                    <input type="submit" value="Update this Traffic Violation" class="btn btn-warning" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<hr />

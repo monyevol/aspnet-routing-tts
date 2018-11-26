@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TrafficTicketsSystem2.Models.Driver>
+
+@{
+    ViewBag.Title = "Drivers";
+}
+
+<h2 class="bold maroon common-font text-center">Drivers - Vehicles Owners</h2>
+
+<table class="table table-striped common-font">
+    <tr>
+        <th class="text-center maroon">@Html.DisplayNameFor(model => model.DriverId)</th>
+        <th class="text-center maroon">@Html.DisplayNameFor(model => model.DrvLicNumber)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.FirstName)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.LastName)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.Address)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.City)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.County)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.State)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.ZIPCode)</th>
+        <th>@Html.ActionLink("Issue New Driver's License", "Create")</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.DriverId)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.DrvLicNumber)</td>
+            <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Address)</td>
+            <td>@Html.DisplayFor(modelItem => item.City)</td>
+            <td>@Html.DisplayFor(modelItem => item.County)</td>
+            <td>@Html.DisplayFor(modelItem => item.State)</td>
+            <td>@Html.DisplayFor(modelItem => item.ZIPCode)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.DriverId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.DriverId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.DriverId })
+            </td>
+        </tr>
+    }
+</table>

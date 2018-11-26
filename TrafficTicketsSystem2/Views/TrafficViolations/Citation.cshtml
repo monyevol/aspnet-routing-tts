@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Traffic Violation - Citation";
+}
+
+<h2 class="text-center common-font maroon bold">Traffic Violation - Citation</h2>
+
+<div>
+    <h3 class="common-font bold text-center maroon">City of Jamies Town</h3>
+    <h4 class="text-center common-font bold">6824 Cochran Ave, Ste 318<br />Jamies Town, MD 20540</h4>
+
+    <div class="row common-font">
+        <div class="col-md-8">
+            <h5 class="common-font bold">Citation #: @ViewBag.TrafficViolationNumber</h5>
+
+            <h5 class="common-font bold">Violation Type: @ViewBag.ViolationName Violation</h5>
+            <hr />
+            <h5 class="common-font bold">@ViewBag.DriverName</h5>
+            <h5 class="common-font bold">@ViewBag.DriverAddress</h5>
+            <h5 class="common-font bold">Vehicle: @ViewBag.Vehicle</h5>
+            <hr />
+            <h5 class="common-font bold">To @ViewBag.DriverName</h5>
+
+            <p>Our records indicate that on @ViewBag.ViolationDate at @ViewBag.ViolationTime, at @ViewBag.ViolationLocation, the above mentioned vehicle committed a @ViewBag.ViolationName violation. @ViewBag.ViolationDescription.</p>
+
+            <p>If you recognize the traffic violation, please pay @ViewBag.PaymentAmount by @ViewBag.PaymentDueDate. Failure to pay the amount by that date will result in an increase of the fine and could result in the suspension of your driving priviledges. If you dispute the violation, to eventually appear in court, please fill out the form on the back of this document and send it back to us.</p>
+        </div>
+        <div class="col-md-4">
+            <p>@ViewBag.PhotoVideo</p>
+        </div>
+    </div>
+</div>
+
+<hr />

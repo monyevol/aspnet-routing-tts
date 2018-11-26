@@ -1,0 +1,33 @@
+﻿@model TrafficTicketsSystem2.Models.Camera
+
+@{
+    ViewBag.Title = "Camera Details";
+}
+
+<h2 class="common-font bold maroon text-center">Camera Details</h2>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt class="maroon">@Html.DisplayNameFor(model => model.CameraId)</dt>
+        <dd>@Html.DisplayFor(model => model.CameraId)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.CameraNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.CameraNumber)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.Make)</dt>
+        <dd>@Html.DisplayFor(model => model.Make)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.Model)</dt>
+        <dd>@Html.DisplayFor(model => model.Model)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.Location)</dt>
+        <dd>@Html.DisplayFor(model => model.Location)</dd>
+    </dl>
+</div>
+
+<p class="text-center">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CameraId }) |
+    @Html.ActionLink("Cameras - Traffic Monitors", "Index")
+</p>

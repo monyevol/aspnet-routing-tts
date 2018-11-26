@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TrafficTicketsSystem2.Models.TrafficViolation>
+
+@{
+    ViewBag.Title = "Traffic Violations";
+}
+
+<h2 class="bold maroon common-font text-center">Traffic Violations</h2>
+
+<table class="table table-hover common-font">
+    <tr>
+        <th class="text-center maroon">@Html.DisplayNameFor(model => model.TrafficViolationId)</th>
+        <th class="text-center maroon">@Html.DisplayNameFor(model => model.TrafficViolationNumber)</th>
+        <th class="text-center maroon">@Html.DisplayNameFor(model => model.CameraId)</th>
+        <th class="text-center maroon">@Html.DisplayNameFor(model => model.VehicleId)</th>
+        <th class="maroon text-center">@Html.DisplayNameFor(model => model.ViolationTypeId)</th>
+        <th class="maroon text-center">@Html.DisplayNameFor(model => model.ViolationDate)</th>
+        <th class="maroon text-center">@Html.DisplayNameFor(model => model.ViolationTime)</th>
+        <th class="maroon text-center">@Html.DisplayNameFor(model => model.PhotoAvailable)</th>
+        <th class="maroon text-center">@Html.DisplayNameFor(model => model.VideoAvailable)</th>
+        <th class="maroon text-center">@Html.DisplayNameFor(model => model.PaymentDueDate)</th>
+        <th class="maroon text-center">@Html.DisplayNameFor(model => model.PaymentDate)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.PaymentAmount)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.PaymentStatus)</th>
+        <th class="maroon">@Html.ActionLink("Process New Traffic Violation", "Create")</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.TrafficViolationId)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.TrafficViolationNumber)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.CameraId)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.VehicleId)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.ViolationTypeId)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.ViolationDate)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.ViolationTime)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.PhotoAvailable)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.VideoAvailable)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.PaymentDueDate)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.PaymentDate)</td>
+        <td>@Html.DisplayFor(modelItem => item.PaymentAmount)</td>
+        <td>@Html.DisplayFor(modelItem => item.PaymentStatus)</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.TrafficViolationId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TrafficViolationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.TrafficViolationId }) | 
+            @Html.ActionLink("Citation", "Citation", new { id = item.TrafficViolationId })
+        </td>
+    </tr>
+    }
+</table>
+
+<hr />

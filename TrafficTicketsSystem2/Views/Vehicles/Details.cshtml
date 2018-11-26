@@ -1,0 +1,39 @@
+﻿@model TrafficTicketsSystem2.Models.Vehicle
+
+@{
+    ViewBag.Title = "Vehicle Details";
+}
+
+<h2 class="common-font bold maroon text-center">Vehicle Registration Details</h2>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt class="maroon">@Html.DisplayNameFor(model => model.VehicleId)</dt>
+        <dd>@Html.DisplayFor(model => model.VehicleId)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.TagNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.TagNumber)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.DriverId)</dt>
+        <dd>@Html.DisplayFor(model => model.DriverId)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.Make)</dt>
+        <dd>@Html.DisplayFor(model => model.Make)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.Model)</dt>
+        <dd>@Html.DisplayFor(model => model.Model)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.VehicleYear)</dt>
+        <dd>@Html.DisplayFor(model => model.VehicleYear)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.Color)</dt>
+        <dd>@Html.DisplayFor(model => model.Color)</dd>
+    </dl>
+</div>
+
+<p class="text-center">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VehicleId }) |
+    @Html.ActionLink("Vehicles", "Index")
+</p>

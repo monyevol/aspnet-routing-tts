@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TrafficTicketsSystem2.Models.Camera>
+
+@{
+    ViewBag.Title = "Cameras - Traffic Monitors";
+}
+
+<h2 class="bold maroon common-font text-center">Cameras - Traffic Monitors</h2>
+
+<table class="table table-striped common-font">
+    <tr>
+        <th class="text-center maroon">@Html.DisplayNameFor(model => model.CameraId)</th>
+        <th class="text-center maroon">@Html.DisplayNameFor(model => model.CameraNumber)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.Make)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.Model)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.Location)</th>
+        <th class="maroon">@Html.ActionLink("Create New Camera", "Create")</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.CameraId)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.CameraNumber)</td>
+            <td>@Html.DisplayFor(modelItem => item.Make)</td>
+            <td>@Html.DisplayFor(modelItem => item.Model)</td>
+            <td>@Html.DisplayFor(modelItem => item.Location)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CameraId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CameraId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CameraId })
+            </td>
+        </tr>
+    }
+</table>

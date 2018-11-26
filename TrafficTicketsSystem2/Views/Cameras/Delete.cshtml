@@ -1,0 +1,41 @@
+﻿@model TrafficTicketsSystem2.Models.Camera
+
+@{
+    ViewBag.Title = "Delete Camera";
+}
+
+<h2 class="maroon common-font text-center bold">Delete/Remove Camera Setup</h2>
+
+<div class="containment">
+    <hr />
+    <dl class="dl-horizontal common-font">
+        <dt class="maroon">@Html.DisplayNameFor(model => model.CameraId)</dt>
+        <dd>@Html.DisplayFor(model => model.CameraId)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.CameraNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.CameraNumber)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.Make)</dt>
+        <dd>@Html.DisplayFor(model => model.Make)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.Model)</dt>
+        <dd>@Html.DisplayFor(model => model.Model)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.Location)</dt>
+        <dd>@Html.DisplayFor(model => model.Location)</dd>
+    </dl>
+
+    <h3 class="common-font text-center bold maroon">Are you sure you want to delete this camera?</h3>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete Camera Record" class="btn btn-warning" /> ::
+            @Html.ActionLink("Cameras - Traffic Monitors", "Index")
+        </div>
+    }
+</div>
+
+<hr />

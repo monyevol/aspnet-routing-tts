@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TrafficTicketsSystem2.Models.Vehicle>
+
+@{
+    ViewBag.Title = "Cars - Vehicles";
+}
+
+<h2 class="bold maroon common-font text-center">Cars - Vehicles</h2>
+
+<table class="table table-hover common-font">
+    <tr>
+        <th class="text-center maroon">@Html.DisplayNameFor(model => model.VehicleId)</th>
+        <th class="text-center maroon">@Html.DisplayNameFor(model => model.TagNumber)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.DriverId)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.Make)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.Model)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.VehicleYear)</th>
+        <th class="maroon">@Html.DisplayNameFor(model => model.Color)</th>
+        <th class="maroon">@Html.ActionLink("Register New Vehicle", "Create")</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.VehicleId)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.TagNumber)</td>
+        <td>@Html.DisplayFor(modelItem => item.DriverId)</td>
+        <td>@Html.DisplayFor(modelItem => item.Make)</td>
+        <td>@Html.DisplayFor(modelItem => item.Model)</td>
+        <td>@Html.DisplayFor(modelItem => item.VehicleYear)</td>
+        <td>@Html.DisplayFor(modelItem => item.Color)</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.VehicleId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.VehicleId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.VehicleId })
+            </td>
+    </tr>
+    }
+</table>
+<hr />

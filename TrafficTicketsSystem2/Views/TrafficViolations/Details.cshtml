@@ -1,0 +1,57 @@
+﻿@model TrafficTicketsSystem2.Models.TrafficViolation
+
+@{
+    ViewBag.Title = "Traffic Violation Details";
+}
+
+<h2 class="common-font bold maroon text-center">Traffic Violation Details</h2>
+
+<hr />
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt class="maroon">@Html.DisplayNameFor(model => model.TrafficViolationId)</dt>
+        <dd>@Html.DisplayFor(model => model.TrafficViolationId)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.TrafficViolationNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.TrafficViolationNumber)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.CameraId)</dt>
+        <dd>@Html.DisplayFor(model => model.CameraId)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.VehicleId)</dt>
+        <dd>@Html.DisplayFor(model => model.VehicleId)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.ViolationTypeId)</dt>
+        <dd>@Html.DisplayFor(model => model.ViolationTypeId)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.ViolationDate)</dt>
+        <dd>@Html.DisplayFor(model => model.ViolationDate)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.ViolationTime)</dt>
+        <dd>@Html.DisplayFor(model => model.ViolationTime)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.PhotoAvailable)</dt>
+        <dd>@Html.DisplayFor(model => model.PhotoAvailable)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.VideoAvailable)</dt>
+        <dd>@Html.DisplayFor(model => model.VideoAvailable)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.PaymentDueDate)</dt>
+        <dd>@Html.DisplayFor(model => model.PaymentDueDate)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.PaymentDate)</dt>
+        <dd>@Html.DisplayFor(model => model.PaymentDate)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.PaymentAmount)</dt>
+        <dd>@Html.DisplayFor(model => model.PaymentAmount)</dd>
+
+        <dt class="maroon">@Html.DisplayNameFor(model => model.PaymentStatus)</dt>
+        <dd>@Html.DisplayFor(model => model.PaymentStatus)</dd>
+    </dl>
+</div>
+
+<p class="text-center">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrafficViolationId }) |
+    @Html.ActionLink("Traffic Violations", "Index")
+</p>
